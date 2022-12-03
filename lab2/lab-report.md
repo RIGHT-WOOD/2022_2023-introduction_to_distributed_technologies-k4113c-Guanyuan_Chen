@@ -40,3 +40,6 @@ minikube kubectl -- expose deployment/webserver --type=NodePort --port=3000
 
 Now, we can access to website via link http://localhost:3000:
 ![Alt text](https://github.com/RIGHT-WOOD/2022_2023-introduction_to_distributed_technologies-k4113c-Guanyuan_Chen/blob/main/lab2/7.png)
+
+The scheme of organization of containers and services:
+![Alt text](https://github.com/RIGHT-WOOD/2022_2023-introduction_to_distributed_technologies-k4113c-Guanyuan_Chen/blob/main/lab2/lab2.png)
