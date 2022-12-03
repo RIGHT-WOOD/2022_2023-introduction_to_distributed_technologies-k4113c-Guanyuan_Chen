@@ -27,4 +27,6 @@ We can access to the vault:
 
 
 The scheme of organization of containers and services:
+
+
 ![Alt text](https://github.com/RIGHT-WOOD/2022_2023-introduction_to_distributed_technologies-k4113c-Guanyuan_Chen/blob/main/lab1/lab1.png)
