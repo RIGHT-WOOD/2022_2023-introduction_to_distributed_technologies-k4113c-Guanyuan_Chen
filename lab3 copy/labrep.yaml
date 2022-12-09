@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name:  labrep
+  namespace: default
+  labels:
+    app:  labrep
+spec:
+  selector:
+    matchLabels:
+      app: labrep
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: labrep
+    spec:
+      containers:
+      - name: labrep
+        image: ifilyaninitmo/itdt-contained-frontend:master
+        ports:
+          - containerPort: 3000
+        env:
+        - name: REACT_APP_USERNAME
+          valueFrom:
+            configMapKeyRef:
+              name: lab-cm
+              key: REACT_APP_USERNAME
+        - name: REACT_APP_COMPANY_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: lab-cm
+              key: REACT_APP_COMPANY_NAME
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: labrep
+spec:
+  selector:
+    app: labrep
+  type: NodePort
+  ports:
+    - port: 3000
+      targetPort: 3000
+      protocol: TCP
